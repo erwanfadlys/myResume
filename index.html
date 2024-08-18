@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,14 @@
     <title>Your Landing Page</title>
     <link rel="stylesheet" href="Asset/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 </head>
 <body>
+
+    <div class="overlay-container" id="drag-container">
+        <img src="Asset/Image/asdad.jpg" alt="Your Image">
+    </div>
+
     <header>
         <nav>
             <ul>
@@ -16,18 +21,25 @@
                 <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certification">Certification</a></li>
             </ul>
         </nav>
     </header>
+    
     <section id="about" class="section">
         <div class="container">
-            <h1>About Me</h1>
-            <p>I'm a collaborative team player with a strong track record of working closely with both global and regional managers to understand their application needs. I ensure these applications are developed and maintained following best practices in the software development lifecycle (SDLC).
-
-                With 15 years of experience in logistics and drilling services, I specialize in maintaining and troubleshooting complex electrical and mechanical systems. I also excel in managing logistics operations and using technical drawings to assist technicians in their daily work.
+            <div class="special_container">
                 
-                My recent focus has been on low-code solutions like the Power Platform. I've successfully created business applications that have transformed global asset management and improved overall operational efficiency. My proficiency in the Power Platform allows me to quickly develop solutions that drive success for our organization.
+                <img src="Asset/Image/stack.png" alt="power platform stack" width="40%">
+            </div>
+            <h1>About Me</h1>
+            <p>I'm a collaborative team player with a strong track record of working closely with both global and regional managers to understand their application needs. I ensure these applications are developed and maintained following best practices in the software development lifecycle (SDLC). With 15 years of experience in logistics and drilling services, I specialize in maintaining and troubleshooting complex electrical and mechanical systems. I also excel in managing logistics operations and using technical drawings to assist technicians in their daily work.
+</p><p>
+                My recent focus has been on leveraging the Power Platform stack, including Power Apps, Power Automate, and Power BI, to create low-code end-to-end solutions. I've successfully developed business applications that have transformed global asset management and improved overall operational efficiency. My proficiency in the Power Platform allows me to quickly develop solutions that drive success for our organization.
             </p>
+            
+            
         </div>
     </section>
 
@@ -38,7 +50,7 @@
             <div class="job">
                 <h2>Electrical Mechanical Tech IV</h2>
                 <p>Halliburton</p>
-                <p>Nov 2017 - Present (5 years 11 months)</p>
+                <p>Nov 2017 - Present</p>
                 <ul>
                     <li>Utilized Power Platform stack and collaborated with Global Business Analyst to build an application that bridged communication between R&M and Asset Managers, enabling real-time response and status clarity of available assets.</li>
                     <li>Created an application that visualizes, monitors, and notifies PIC on the calibration/checklist's expiration automatically, significantly reducing response time with the visualization dashboard and notification.</li>
@@ -91,31 +103,43 @@
         </div>
     </section>
     
-
     <section id="projects" class="section">
         <div class="container">
             <h1>Projects</h1>
     
             <div class="project">
-                <h2>Norway Sperry RNM Digital Checklist</h2>
-                <p>Jan 2023 - Present</p>
+                <h2>Kuwait NG Exit Checklist</h2>
+                <p>Jan 2024 - April 2024</p>
                 <p>Associated with Halliburton</p>
-                <p>The application that I have developed allows for seamless and efficient equipment inspections through the use of QRCode scanning. Upon scanning the QRCode, the app will automatically populate the relevant checklist questions for that particular day, ensuring that the inspection process is standardized and comprehensive. In addition, this app also provides real-time updates on the equipment's inspection status, improving transparency and accountability.</p>
+                <p>Developed a comprehensive HR Offboarding application that significantly improves efficiency and accuracy in the offboarding process. Key features include:
+<ol>
+    <li>
+        <b>Automated Notifications:</b> Streamlines communication by sending timely alerts to relevant parties.
+    </li>
+    <li><b>Automated Approval:</b> Leverages Azure Directory for seamless approval workflows based on the employee’s direct manager.</li>
+    <li>
+        <b>Automated Documentation:</b>Utilizes JSON manipulation for generating and managing offboarding documents.
+    </li>
+    <li><b>Generative Document Control:</b>Ensures accurate and consistent document creation and management.
+        This app enhances operational efficiency and compliance, delivering a smooth offboarding experience.</li><br>
+        <img src="/Asset/Image/ngExitChecklist.png" alt="Repair to function application Image">
+</ol>
+            
             </div>
     
             <div class="project">
-                <h2>MENAAP Repair To Function Apps</h2>
+                <h2>Global Repair To Function Apps</h2>
                 <p>Dec 2022 - Present</p>
                 <p>Associated with Halliburton</p>
                 <img src="/Asset/Image/R2F.jpg" alt="Repair to function application Image">
-                <p>I have developed a user-friendly CRUD application that enables users to update their inventory for repaired to functional parts. The app provides valuable insights, displaying the cost savings achieved by utilizing repaired parts rather than new ones. Additionally, the app includes a reporting section that allows users to easily download reports for analysis purposes.</p>
+                <p>I have developed a user-friendly CRUD application that enables users to update their inventory for repaired to functional parts. The app provides valuable insights, displaying the cost savings achieved by utilizing repaired parts rather than new ones. Additionally, the app includes a reporting section that allows users to easily download reports for analysis purposes and automated notification for approval workflow.</p>
             </div>
     
             <div class="project">
                 <h2>Continuous Improvement Observation App</h2>
                 <p>Nov 2022 - Present</p>
                 <p>Associated with Halliburton</p>
-                <img src="/Asset/Image/MENA_CIObservation.jpg" alt="CI Observation application Image">
+                <img src="/Asset/Image/iSolve.png" alt="CI Observation application Image">
                 <p>This application serves as a comprehensive platform that enhances communication between front-end workers and management, specifically focusing on real-time continuous improvement (CI) observations. It significantly reduces response times, fosters a culture of proactive improvement, and streamlines operations. Additionally, the app facilitates knowledge sharing and collaboration among users, creating a collaborative and effective environment for continuous improvement within the organization.</p>
             </div>
     
@@ -135,6 +159,37 @@
         </div>
     </section>
 
+    <section id="education" class="section">
+        <div class="container">
+            <h1>Education</h1>
+
+            <div class="education">
+                <h2>BACHELOR OF INFORMATION TECHNOLOGY WITH HONOURS</h2>
+                <p><b>2021 - January 2025</b></p>
+                <p>Faculty of Technology and Applied Sciences</p>
+                <p>CGPA 3.79</p>
+                <p>Open University Malaysia</p>
+                <p>Dean List:</p>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMTAgMTEwMDExMDAg">September 2021</a><br>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAg">January 2022</a><br>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMDEg">May 2022</a><br>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMDAg">September 2022</a><br>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDAgMTEwMDExMDEg">May 2023</a><br>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDAgMTEwMDExMDAg">September 2023</a><br>
+                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDEwMTEgMTEwMDExMTAg">January 2024</a><br>
+            </div>
+            <br>
+            <div class="education">
+                <h2>DIPLOMA OF ELECTRONIC ENGINEERING</h2>
+                <p><b>2007 - 2009</b></p>
+                <p>Electrical and Electronic Engineering</p>
+                <p>Polytechnic of Kota Kinabalu, Sabah</p>
+                <p>Malaysia</p>
+            </div>
+        </div>
+        
+    </section>
+
     <section id="contact" class="section">
         <div class="container">
             <h1>Contact</h1>
@@ -142,176 +197,21 @@
                 <p><i class="fas fa-envelope"></i> Email: <a href="mailto:Erwan.fadlys@gmail.com">Erwan.fadlys@gmail.com</a></p>
                 <p><i class="fas fa-phone"></i> Contact Number:</p>
                 <ul>
-                    <t></t><li><i class="fas fa-phone-square"></i> Kuwait: +965 9608 6853</li>
-                    <t></t><li><i class="fas fa-phone-square"></i> Malaysia: +60 10 8315 362</li>
+                    <li>&emsp;<i class="fas fa-phone-square"></i> Kuwait: +965 9608 6853</li>
+                    <li>&emsp;<i class="fas fa-phone-square"></i> Malaysia: +60 10 8315 362</li>
                 </ul>
                 <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/" target="_blank">https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/</a></p>
                 <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/erwanfadlys" target="_blank">facebook.com/erwanfadlys</a></p>
             </div>
         </div>
     </section>
+
+    
 
     <footer>
         <p>&copy; 2024 Erwan Fadly Sudiman</p>
     </footer>
+
+    <script src="Asset/script/drag.js"></script>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erwan Fadly Sudiman</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about" class="section">
-        <div class="container">
-            <h1>About Me</h1>
-            <p>I'm a collaborative team player with a strong track record of working closely with both global and regional managers to understand their application needs. I ensure these applications are developed and maintained following best practices in the software development lifecycle (SDLC).
-
-                With 15 years of experience in logistics and drilling services, I specialize in maintaining and troubleshooting complex electrical and mechanical systems. I also excel in managing logistics operations and using technical drawings to assist technicians in their daily work.
-                
-                My recent focus has been on low-code solutions like the Power Platform. I've successfully created business applications that have transformed global asset management and improved overall operational efficiency. My proficiency in the Power Platform allows me to quickly develop solutions that drive success for our organization.
-            </p>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <h1>Experience</h1>
-            
-            <div class="job">
-                <h2>Electrical Mechanical Tech IV</h2>
-                <p>Halliburton</p>
-                <p>Nov 2017 - Present (5 years 11 months)</p>
-                <ul>
-                    <li>Utilized Power Platform stack and collaborated with Global Business Analyst to build an application that bridged communication between R&M and Asset Managers, enabling real-time response and status clarity of available assets.</li>
-                    <li>Created an application that visualizes, monitors, and notifies PIC on the calibration/checklist's expiration automatically, significantly reducing response time with the visualization dashboard and notification.</li>
-                    <li>Primary responsibilities include maintaining and troubleshooting:</li>
-                    <ul>
-                        <li>Geopilot RSS 9600 and RSS 7600 level 2 service (Main builder, Power Unit, bit Gamma insert, Driver, and Repeater).</li>
-                        <li>Geopilot RSS 5200 level 2 service (Main builder, Compensator, and Hydraulic assembly).</li>
-                    </ul>
-                </ul>
-            </div>
-    
-            <div class="job">
-                <h2>Firewatch</h2>
-                <p>Petra Energy Berhad</p>
-                <p>2017 - Jul 2017 (less than a year)</p>
-                <p>BOSIET (OPITO certified), Petronas Medical and Offshore Safety Passport (Petronas) Ready</p>
-            </div>
-    
-            <div class="job">
-                <h2>Technical Lead</h2>
-                <p>Self-employed</p>
-                <p>Jan 2016 - Jun 2017 (1 year 6 months)</p>
-            </div>
-    
-            <div class="job">
-                <h2>Electrical/Mechanical Tech III</h2>
-                <p>Halliburton</p>
-                <p>Sep 2009 - Jan 2016 (6 years 5 months)</p>
-                <ul>
-                    <li>Specialized in preventive maintenance, electrical, and mechanical training.</li>
-                    <li>Lithium battery safety officer with years of experience in handling lithium battery installation and waste management.</li>
-                    <li>KAIZEN and LEAN ready. Multiple maximum value performance (MVP) acquired through a challenging career.</li>
-                    <li>Relocation is never a problem.</li>
-                </ul>
-            </div>
-    
-            <div class="job">
-                <h2>Instrument Technician Trainee</h2>
-                <p>Sabah Forest Industries SDN. BHD</p>
-                <p>Jan 2008 - Jul 2008 (7 months)</p>
-                <ul>
-                    <li>Worked as a technician at the Instrument Maintenance Department.</li>
-                    <li>Prepared working reports and daily reports.</li>
-                    <li>Maintained basic instrument devices such as digital/analog transmitters, measuring devices, etc.</li>
-                    <li>Re-formatted computers.</li>
-                    <li>Assembled and disassembled basic instrument devices for maintenance.</li>
-                </ul>
-            </div>
-    
-        </div>
-    </section>
-    
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h1>Projects</h1>
-    
-            <div class="project">
-                <h2>Norway Sperry RNM Digital Checklist</h2>
-                <p>Jan 2023 - Present</p>
-                <p>Associated with Halliburton</p>
-                <p>The application that I have developed allows for seamless and efficient equipment inspections through the use of QRCode scanning. Upon scanning the QRCode, the app will automatically populate the relevant checklist questions for that particular day, ensuring that the inspection process is standardized and comprehensive. In addition, this app also provides real-time updates on the equipment's inspection status, improving transparency and accountability.</p>
-            </div>
-    
-            <div class="project">
-                <h2>MENAAP Repair To Function Apps</h2>
-                <p>Dec 2022 - Present</p>
-                <p>Associated with Halliburton</p>
-                <img src="./Asset/R2F.jpg" alt="Repair to function application Image">
-                <p>I have developed a user-friendly CRUD application that enables users to update their inventory for repaired to functional parts. The app provides valuable insights, displaying the cost savings achieved by utilizing repaired parts rather than new ones. Additionally, the app includes a reporting section that allows users to easily download reports for analysis purposes.</p>
-            </div>
-    
-            <div class="project">
-                <h2>Continuous Improvement Observation App</h2>
-                <p>Nov 2022 - Present</p>
-                <p>Associated with Halliburton</p>
-                <img src="./Asset/MENA_CIObservation.jpg" alt="CI Observation application Image">
-                <p>This application serves as a comprehensive platform that enhances communication between front-end workers and management, specifically focusing on real-time continuous improvement (CI) observations. It significantly reduces response times, fosters a culture of proactive improvement, and streamlines operations. Additionally, the app facilitates knowledge sharing and collaboration among users, creating a collaborative and effective environment for continuous improvement within the organization.</p>
-            </div>
-    
-            <div class="project">
-                <h2>Global Asset Redeployment</h2>
-                <p>Oct 2021 - Jan 2023</p>
-                <p>Associated with Halliburton</p>
-                <p>Top Redeployment Asset Management is an innovative application that allows users to submit their requests for asset redeployment. With this app, users can leave a comment on the specific asset that they want to be redeployed to their location, ensuring that their needs are met in a timely and efficient manner. The application is designed with an automated notification system that sends notifications to the region/country owner of the tool, ensuring that the redeployment process is swift and hassle-free. This feature helps streamline the redeployment process and ensures that everyone is kept up-to-date with the status of the assets. Additionally, the app is embedded in Power BI, allowing real-time data comparison and notifications, providing users with up-to-date information on the assets' status.</p>
-            </div>
-    
-            <div class="project">
-                <h2>Document Automation</h2>
-                <p>Sep 2020 - Aug 2021</p>
-                <p>Associated with Halliburton</p>
-                <p>I have developed a user-friendly application that simplifies the work order and dozuki paperwork process for technicians, improving efficiency and reducing potential errors in documentation. The application allows technicians to easily input their work order details and upload relevant dozuki documents, with the app automatically displaying the number of dozuki documents related to the tool selected. Additionally, the app streamlines the documentation process by automatically sorting the documents for final compilation with just a single click.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h1>Contact</h1>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:Erwan.fadlys@gmail.com">Erwan.fadlys@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> Contact Number:</p>
-                <ul>
-                    <li><i class="fas fa-phone-square"></i> Kuwait: +965 9608 6853</li>
-                    <li><i class="fas fa-phone-square"></i> Malaysia: +60 10 8315 362</li>
-                </ul>
-                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/" target="_blank">https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/</a></p>
-                <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/erwanfadlys" target="_blank">facebook.com/erwanfadlys</a></p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Erwan Fadly Sudiman</p>
-    </footer>
-</body>
-</html>
->>>>>>> master/master
