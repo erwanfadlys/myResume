@@ -25,7 +25,24 @@ header {
     padding: 10px 0;
     text-align: center;
 }
+.overlay-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 200px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: move;
+}
 
+.overlay-container img {
+    width: 100%;
+    border-radius: 50%;
+}
 .navbar {
     text-align: center;
 }
