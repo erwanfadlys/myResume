@@ -1,216 +1,964 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erwan F. Sudiman Resume</title>
-    <link rel="stylesheet" href="Asset/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="Asset/script/drag.js"></script>
-</head>
-<body>
+<title>Erwan Fadly Sudiman, Resume</title>
+<meta name="description" content="Erwan Fadly Sudiman. Power Platform solution developer. Compliance workflow automation, business intelligence and applied AI.">
+<style>
+  /* ============================================================
+     Charcoal and orange identity kept from the original site.
+     Structure is editorial: a two column grid, a timeline spine,
+     hairline rules, type scale. No boxes, no radius, no shadow.
+     ============================================================ */
 
-    <div class="overlay-container" id="drag-container">
-        <img src="Asset/Image/asdad.jpg" alt="Your Image" width="20%">
+  :root {
+    --paper:        #ffffff;
+    --paper-alt:    #f6f6f5;
+    --bar:          #262626;
+    --bar-ink:      #ffffff;
+    --bar-ink-soft: #b9b9b7;
+    --bar-rule:     rgba(255,255,255,0.18);
+    --ink:          #1c1c1b;
+    --ink-soft:     #4d4d4a;
+    --ink-faint:    #83837e;
+    --accent:       #cc4a00;
+    --accent-bright:#ff6600;
+    --rule:         #dedddb;
+    --rule-strong:  #1c1c1b;
+
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+    --rail: 8.5rem;
+    --gap: 2rem;
+    --max: 58rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:        #131312;
+      --paper-alt:    #1b1b1a;
+      --bar:          #000000;
+      --bar-ink:      #f4f4f2;
+      --bar-ink-soft: #9d9d99;
+      --bar-rule:     rgba(255,255,255,0.14);
+      --ink:          #e9e9e6;
+      --ink-soft:     #b0b0ab;
+      --ink-faint:    #83837e;
+      --accent:       #ff7a33;
+      --accent-bright:#ff9152;
+      --rule:         #333331;
+      --rule-strong:  #e9e9e6;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:        #131312;
+    --paper-alt:    #1b1b1a;
+    --bar:          #000000;
+    --bar-ink:      #f4f4f2;
+    --bar-ink-soft: #9d9d99;
+    --bar-rule:     rgba(255,255,255,0.14);
+    --ink:          #e9e9e6;
+    --ink-soft:     #b0b0ab;
+    --ink-faint:    #83837e;
+    --accent:       #ff7a33;
+    --accent-bright:#ff9152;
+    --rule:         #333331;
+    --rule-strong:  #e9e9e6;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 3.5rem; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+  a { color: var(--accent); text-underline-offset: 0.15em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------------- top bar ---------------- */
+
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bar);
+    border-bottom: 1px solid var(--bar-rule);
+  }
+
+  .topbar .wrap {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    justify-content: space-between; gap: 0.3rem 1.5rem;
+    padding-top: 0.55rem; padding-bottom: 0.55rem;
+  }
+
+  .topbar .who {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--bar-ink);
+  }
+
+  .topbar nav ul {
+    display: flex; flex-wrap: wrap; gap: 0.2rem 1.35rem;
+    list-style: none; margin: 0; padding: 0;
+  }
+
+  .topbar nav a {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--bar-ink-soft);
+    text-decoration: none; transition: color .18s;
+  }
+  .topbar nav a:hover { color: var(--accent-bright); }
+
+  /* ---------------- masthead ---------------- */
+
+  .masthead { background: var(--bar); color: var(--bar-ink); padding: 3.5rem 0 2.75rem; }
+
+  .masthead h1 {
+    margin: 0;
+    font-size: clamp(2.1rem, 7vw, 3.6rem);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  .masthead .role {
+    margin: 1.1rem 0 0;
+    max-width: 40rem;
+    font-size: clamp(0.98rem, 2vw, 1.1rem);
+    line-height: 1.55;
+    color: var(--bar-ink-soft);
+    text-wrap: pretty;
+  }
+
+  .masthead .meta {
+    display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem;
+    list-style: none; margin: 1.75rem 0 0; padding: 1.25rem 0 0;
+    border-top: 1px solid var(--bar-rule);
+    font-family: var(--mono); font-size: 0.76rem;
+    color: var(--bar-ink-soft);
+  }
+  .masthead .meta a { color: var(--bar-ink-soft); text-decoration: none; border-bottom: 1px solid var(--bar-rule); }
+  .masthead .meta a:hover { color: var(--accent-bright); border-bottom-color: var(--accent-bright); }
+
+  /* ---------------- section shell ---------------- */
+
+  section { padding: 3.25rem 0 0; }
+  section:last-of-type { padding-bottom: 4rem; }
+
+  .sec-head {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: var(--gap);
+    align-items: baseline;
+    border-top: 2px solid var(--rule-strong);
+    padding-top: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .sec-num {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent);
+  }
+
+  .sec-head h2 {
+    margin: 0; font-size: 1.45rem; letter-spacing: -0.02em; font-weight: 700;
+  }
+
+  /* two column: date rail + content */
+
+  .row {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: var(--gap);
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .row:first-of-type { border-top: 0; padding-top: 0; }
+
+  .when {
+    font-family: var(--mono); font-size: 0.74rem; line-height: 1.5;
+    color: var(--ink-faint); font-variant-numeric: tabular-nums;
+    padding-top: 0.25rem;
+  }
+  .when b { display: block; color: var(--accent); font-weight: 600; }
+
+  .row h3 { margin: 0 0 0.1rem; font-size: 1.08rem; letter-spacing: -0.01em; font-weight: 700; }
+
+  .org { margin: 0 0 0.7rem; font-size: 0.88rem; color: var(--ink-soft); font-weight: 600; }
+
+  .row ul { margin: 0; padding-left: 1.05rem; }
+  .row li { margin-bottom: 0.4rem; }
+  .row li:last-child { margin-bottom: 0; }
+  .row li::marker { color: var(--accent); }
+  .row ul ul { margin-top: 0.4rem; }
+  .row ul ul li { color: var(--ink-soft); font-size: 0.94rem; }
+
+  .stack {
+    font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint);
+    margin: 0.85rem 0 0; letter-spacing: 0.01em;
+  }
+
+  .flag {
+    font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--accent);
+    border: 1px solid var(--accent); padding: 0.05rem 0.4rem;
+    vertical-align: 0.15em; margin-left: 0.45rem; font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .prose { max-width: 38rem; }
+  .prose p { margin: 0 0 0.95rem; text-wrap: pretty; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* ---------------- skills, set as a definition grid ---------------- */
+
+  .skills { display: grid; gap: 0; }
+
+  .skills .row { align-items: start; }
+
+  .skill-list {
+    display: flex; flex-wrap: wrap; gap: 0.15rem 0;
+    list-style: none; margin: 0; padding: 0;
+    font-size: 0.92rem; color: var(--ink-soft);
+  }
+  .skill-list li::after { content: "  ·  "; color: var(--ink-faint); }
+  .skill-list li:last-child::after { content: ""; }
+  .skill-list li { margin-right: 0.15rem; }
+
+  /* ---------------- masthead portrait ---------------- */
+
+  .masthead .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 0 2.5rem; align-items: start; }
+  .masthead .lead { min-width: 0; }
+  .masthead .meta { grid-column: 1 / -1; }
+
+  .portrait {
+    width: 8.5rem; height: 8.5rem;
+    object-fit: cover; object-position: 50% 22%;
+    filter: grayscale(1) contrast(1.06);
+    border-top: 3px solid var(--accent-bright);
+    display: block;
+  }
+
+  @media (max-width: 44rem) {
+    .masthead .wrap { grid-template-columns: minmax(0,1fr); gap: 1.25rem 0; }
+    .portrait { width: 6rem; height: 6rem; order: -1; }
+  }
+
+  /* ---------------- figures ---------------- */
+
+  figure { margin: 0 0 0.5rem; }
+
+  .shot {
+    display: block; width: 100%; height: auto;
+    border: 1px solid var(--rule);
+    background: var(--paper-alt);
+  }
+
+  figure svg {
+    display: block; width: 100%; max-width: 100%; height: auto;
+    color: var(--ink);
+    overflow: visible;
+  }
+
+  .fig-scroll { overflow-x: auto; padding-bottom: 0.25rem; }
+  .fig-scroll > svg { min-width: 30rem; }
+
+  figcaption {
+    font-size: 0.82rem; color: var(--ink-faint); line-height: 1.5;
+    margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--rule);
+    max-width: 38rem;
+  }
+
+  /* SVG theming hooks, styled from the page so the fragment stays clean */
+  .dg-line   { stroke: currentColor; stroke-width: 1.25; fill: none; }
+  .dg-rule   { stroke: var(--rule); stroke-width: 1; }
+  .dg-box    { stroke: currentColor; stroke-width: 1.25; fill: none; }
+  .dg-fill   { fill: var(--paper-alt); stroke: currentColor; stroke-width: 1.25; }
+  .dg-accent { stroke: var(--accent); fill: none; stroke-width: 1.75; }
+  .dg-accent-fill { fill: var(--accent); stroke: none; }
+  .dg-accent-soft { fill: var(--accent); opacity: 0.16; stroke: none; }
+  .dg-dash   { stroke: currentColor; stroke-width: 1.25; fill: none; stroke-dasharray: 4 3; opacity: 0.75; }
+  .dg-t      { fill: currentColor; font-family: var(--mono); font-size: 11px; }
+  .dg-t-sm   { fill: currentColor; font-family: var(--mono); font-size: 9.5px; opacity: 0.72; }
+  .dg-t-lg   { fill: currentColor; font-family: var(--mono); font-size: 12px; font-weight: 600; }
+  .dg-t-acc  { fill: var(--accent); font-family: var(--mono); font-size: 11px; font-weight: 600; }
+  .dg-head   { fill: currentColor; opacity: 0.55; }
+
+  /* ---------------- footer ---------------- */
+
+  footer {
+    background: var(--bar); color: var(--bar-ink-soft);
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
+    padding: 1.4rem 0; margin-top: 2rem;
+  }
+  footer p { margin: 0; }
+
+  /* ---------------- responsive ---------------- */
+
+  @media (max-width: 44rem) {
+    :root { --rail: 0px; --gap: 0px; }
+    .sec-head, .row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .sec-num { display: block; margin-bottom: 0.3rem; }
+    .when { padding-top: 0; margin-bottom: 0.6rem; }
+    .when b { display: inline; }
+    .masthead { padding: 2.5rem 0 2rem; }
+    .topbar nav ul { gap: 0.2rem 1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+
+  /* ============================================================
+     PRINT. Cmd or Ctrl + P gives a clean paginated PDF.
+     ============================================================ */
+
+  @media print {
+    :root {
+      --paper: #fff; --paper-alt: #fff;
+      --bar: #fff; --bar-ink: #000; --bar-ink-soft: #222; --bar-rule: #999;
+      --ink: #000; --ink-soft: #222; --ink-faint: #555;
+      --accent: #000; --accent-bright: #000;
+      --rule: #ccc; --rule-strong: #000;
+    }
+
+    @page { margin: 13mm 12mm; }
+
+    body { font-size: 10pt; line-height: 1.4; background: #fff; }
+    .topbar, footer { display: none !important; }
+    .wrap { max-width: none; padding: 0; }
+
+    .masthead { padding: 0 0 0.5rem; border-bottom: 2px solid #000; }
+    .masthead h1 { font-size: 20pt; }
+    .masthead .role { font-size: 9.5pt; margin-top: 0.4rem; }
+    .masthead .meta { margin-top: 0.6rem; padding-top: 0.4rem; font-size: 8pt; gap: 0.1rem 1.1rem; }
+    .masthead .meta a { border: 0; }
+
+    section { padding: 0.55rem 0 0; }
+    section:last-of-type { padding-bottom: 0; }
+
+    .sec-head { padding-top: 0.35rem; margin-bottom: 0.5rem; break-after: avoid; }
+    .sec-head h2 { font-size: 12pt; }
+
+    .row { padding: 0.42rem 0; break-inside: avoid; }
+    .row h3 { font-size: 10.5pt; }
+    .stack { font-size: 8pt; }
+
+    figure { break-inside: avoid; }
+    figure svg { max-width: 100%; }
+
+    .masthead .wrap { display: block; }
+    .portrait { display: none; }
+    .shot { max-height: 58mm; width: auto; max-width: 100%; border-color: #999; }
+    .fig-scroll { overflow: visible; }
+    .fig-scroll > svg { min-width: 0; }
+    figcaption { font-size: 8pt; }
+
+    .flag { border-color: #000; color: #000; }
+    a { color: #000; text-decoration: none; }
+  }
+</style>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="who">Erwan Fadly Sudiman</span>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#arc">Arc</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certification">Certification</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="lead">
+      <h1>Erwan Fadly Sudiman</h1>
+      <p class="role">Technical Specialist at Halliburton Kuwait. I build the systems that run processes where being wrong actually costs something: audits, approvals, compliance records, asset registers. Seventeen years of operations experience underneath, now spent writing the software.</p>
+    </div>
+    <img class="portrait" src="Asset/Image/asdad.jpg" width="982" height="1024" alt="Erwan Fadly Sudiman">
+    <ul class="meta">
+      <li>Kuwait</li>
+      <li><a href="mailto:erwan.fadlys@gmail.com">erwan.fadlys@gmail.com</a></li>
+      <li>+965 9608 6853</li>
+      <li>+60 10 8315 362</li>
+      <li><a href="https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="profile">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Profile</h2></div>
+    <div class="row">
+      <div class="when"><b>Summary</b>2008 to present</div>
+      <div class="prose">
+        <p>I started on the tools as an instrument technician and spent the first decade of my career maintaining electrical and mechanical systems in drilling services and logistics. That taught me where enterprise data actually comes from and how messy it is by the time anyone tries to report on it.</p>
+        <p>Since 2020 I have been building the software instead. My working stack is the Microsoft Power Platform end to end, Power Apps, Power Automate, Dataverse, SharePoint and Power BI, delivered through governed Development, Test and Production environments with role based security. More recently I led a business critical audit application out of low code and into a React and TypeScript codebase running on Dataverse, with unit tests over the business rules and a documented security review.</p>
+        <p>Alongside that I work on verifiable AI: systems designed so every figure an analytical or AI layer reports can be traced back to the source data it came from. A confident wrong number is worse than no number, and I think that property belongs in the architecture rather than in a prompt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="arc">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Career arc</h2></div>
+    <div class="row">
+      <div class="when"><b>2007</b>to 2027</div>
+      <div>
+        <figure>
+          <div class="fig-scroll">
+            <svg viewBox="0 0 900 268" role="img" aria-label="Timeline from 2007 to 2027 showing employment as a technician from 2008, a software development phase beginning in 2020 that runs alongside the same job, and three qualifications, with the bachelor's degree earned concurrently with full time work.">
+              <defs>
+                <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" class="dg-head"/>
+                </marker>
+              </defs>
+
+              <text x="0" y="14" class="dg-t-lg">ROLE</text>
+              <line x1="0" y1="22" x2="900" y2="22" class="dg-rule"/>
+
+              <rect x="101" y="34" width="25" height="16" class="dg-fill"/>
+              <text x="101" y="64" class="dg-t-sm">Trainee</text>
+
+              <rect x="169" y="34" width="260" height="16" class="dg-fill"/>
+              <text x="177" y="46" class="dg-t">Halliburton, Technician III</text>
+
+              <rect x="429" y="34" width="61" height="16" class="dg-fill"/>
+              <text x="429" y="64" class="dg-t-sm">Self employed</text>
+
+              <rect x="496" y="34" width="347" height="16" class="dg-fill"/>
+              <text x="504" y="46" class="dg-t">Halliburton Kuwait, to Technical Specialist</text>
+
+              <text x="0" y="104" class="dg-t-lg">BUILDING</text>
+              <line x1="0" y1="112" x2="900" y2="112" class="dg-rule"/>
+
+              <rect x="593" y="124" width="250" height="16" class="dg-accent-soft"/>
+              <rect x="593" y="124" width="250" height="16" class="dg-accent"/>
+              <text x="601" y="136" class="dg-t-acc">Power Platform, then React and TypeScript</text>
+
+              <line x1="593" y1="50" x2="593" y2="124" class="dg-accent" marker-end="url(#ar)"/>
+              <text x="600" y="86" class="dg-t-sm">Same job, new craft</text>
+
+              <text x="0" y="180" class="dg-t-lg">STUDY</text>
+              <line x1="0" y1="188" x2="900" y2="188" class="dg-rule"/>
+
+              <rect x="60" y="200" width="82" height="14" class="dg-fill"/>
+              <text x="60" y="228" class="dg-t-sm">Diploma, Electronics</text>
+
+              <rect x="634" y="200" width="164" height="14" class="dg-fill"/>
+              <text x="634" y="228" class="dg-t-sm">BSc IT Honours, CGPA 3.79</text>
+
+              <rect x="839" y="200" width="41" height="14" class="dg-dash"/>
+              <text x="805" y="248" class="dg-t-sm">MSc, in progress</text>
+
+              <line x1="0" y1="256" x2="900" y2="256" class="dg-line"/>
+              <g class="dg-t-sm">
+                <text x="60" y="268" text-anchor="middle">2007</text>
+                <text x="265" y="268" text-anchor="middle">2012</text>
+                <text x="470" y="268" text-anchor="middle">2017</text>
+                <text x="675" y="268" text-anchor="middle">2022</text>
+                <text x="880" y="268" text-anchor="middle">2027</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>The software career did not replace the operations career, it grew out of it. The bachelor's degree was earned in full while working full time in Kuwait, and the master's is under way on the same terms.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Skills</h2></div>
+    <div class="skills">
+
+      <div class="row">
+        <div class="when"><b>Compliance</b>and controls</div>
+        <ul class="skill-list">
+          <li>Audit lifecycle management</li><li>Approval and escalation workflows</li>
+          <li>Evidence and documentation trails</li><li>Corrective action tracking</li>
+          <li>Repeat finding detection</li><li>Role based access control</li>
+          <li>Recurring obligation tracking</li><li>Development, Test and Production ALM</li>
+          <li>Security control gap analysis</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="when"><b>Power</b>Platform</div>
+        <ul class="skill-list">
+          <li>Power Apps canvas</li><li>Power Apps Code Apps</li><li>Power Fx</li>
+          <li>Power Automate</li><li>Dataverse</li><li>Power BI</li>
+          <li>SharePoint</li><li>Entra ID</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="when"><b>Software</b>engineering</div>
+        <ul class="skill-list">
+          <li>TypeScript</li><li>React</li><li>Node.js</li><li>Python</li>
+          <li>Java</li><li>SQL</li><li>Vite</li><li>Vitest</li>
+          <li>Git</li><li>REST API design</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="when"><b>Data</b>and AI</div>
+        <ul class="skill-list">
+          <li>Business intelligence</li><li>Predictive analytics</li><li>Supervised learning</li>
+          <li>Random forest and regression</li><li>ROC-AUC, F1, precision, recall</li>
+          <li>Pearson and Spearman correlation</li><li>AI output verification</li>
+          <li>Semantic data modelling</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="when"><b>Domain</b>operations</div>
+        <ul class="skill-list">
+          <li>Drilling services</li><li>Oilfield equipment</li><li>Logistics</li>
+          <li>Asset management</li><li>Equipment inspection</li><li>KAIZEN and LEAN</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Experience</h2></div>
+
+    <div class="row">
+      <div class="when"><b>Nov 2017</b>to present</div>
+      <div>
+        <h3>Technical Specialist</h3>
+        <p class="org">Halliburton, Kuwait</p>
+        <ul>
+          <li>Designed and delivered a global audit and compliance management platform on Dataverse supporting 50 to 150 management users, with role based security reflecting regional and jurisdictional access requirements.</li>
+          <li>Led the migration of a shipped Power Apps canvas application into a React and TypeScript Power Apps Code App on Dataverse, moving a business critical audit workflow out of low code and into maintained, unit tested application code.</li>
+          <li>Prepared an enterprise application for formal information security review and authored the control gap analysis, documenting weaknesses and proposed remediations ahead of the session rather than waiting for reviewers to find them.</li>
+          <li>Built automated workflows for audit assignment, deadline notification, evidence collection, corrective action tracking and stakeholder approval.</li>
+          <li>Owned solution delivery end to end: requirements, architecture, build, testing, controlled deployment and user adoption.</li>
+          <li>Worked with global business analysts and regional managers to bridge Repair and Maintenance with Asset Managers, giving real time visibility of available assets.</li>
+          <li>Built calibration and checklist monitoring with automatic expiry notification, cutting response time through dashboards and alerts.</li>
+          <li>Applied supervised learning, random forest and regression, for prediction based analytics, evaluated with ROC-AUC, recall, precision and F1.</li>
+          <li>Maintained and troubleshot Geopilot rotary steerable systems:
+            <ul>
+              <li>RSS 9600 and RSS 7600 level 2 service: main builder, power unit, bit gamma insert, driver, repeater.</li>
+              <li>RSS 5200 level 2 service: main builder, compensator, hydraulic assembly.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <header>
-        <nav>
-            <ul>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                <li class="nav-item"><a class="nav-link" href="#certification">Certification</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about" class="section">
-        <div class="container">
-            <div class="special_container">
-                
-                <img src="Asset/Image/stack.png" alt="power platform stack" width="40%">
-            </div>
-            <h1>About Me</h1>
-            <p>I'm a collaborative team player with a strong track record of working closely with both global and regional managers to understand their application needs. I ensure these applications are developed and maintained following best practices in the software development lifecycle (SDLC). With 15 years of experience in logistics and drilling services, I specialize in maintaining and troubleshooting complex electrical and mechanical systems. I also excel in managing logistics operations and using technical drawings to assist technicians in their daily work.
-</p><p>
-                My recent focus has been on leveraging the Power Platform stack, including Power Apps, Power Automate, and Power BI, to create low-code end-to-end solutions. I've successfully developed business applications that have transformed global asset management and improved overall operational efficiency. My proficiency in the Power Platform allows me to quickly develop solutions that drive success for our organization.
-            </p>
-            
-            
-        </div>
-    </section>
+    <div class="row">
+      <div class="when"><b>2017</b>to Jul 2017</div>
+      <div>
+        <h3>Firewatch</h3>
+        <p class="org">Petra Energy Berhad, Malaysia</p>
+        <ul><li>Offshore safety role. BOSIET (OPITO certified), Petronas Medical and Offshore Safety Passport.</li></ul>
+      </div>
+    </div>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h1>Experience</h1>
-            
-            <div class="job">
-                <h2>Electrical Mechanical Tech IV</h2>
-                <p>Halliburton</p>
-                <p>Nov 2017 - Present</p>
-                <ul>
-                    <li>Utilized Power Platform stack and collaborated with Global Business Analyst to build an application that bridged communication between R&M and Asset Managers, enabling real-time response and status clarity of available assets.</li>
-                    <li>Created an application that visualizes, monitors, and notifies PIC on the calibration/checklist's expiration automatically, significantly reducing response time with the visualization dashboard and notification.</li>
-                    <li>Primary responsibilities include maintaining and troubleshooting:</li>
-                    <ul>
-                        <li>Geopilot RSS 9600 and RSS 7600 level 2 service (Main builder, Power Unit, bit Gamma insert, Driver, and Repeater).</li>
-                        <li>Geopilot RSS 5200 level 2 service (Main builder, Compensator, and Hydraulic assembly).</li>
-                    </ul>
-                </ul>
-            </div>
-    
-            <div class="job">
-                <h2>Firewatch</h2>
-                <p>Petra Energy Berhad</p>
-                <p>2017 - Jul 2017 (less than a year)</p>
-                <p>BOSIET (OPITO certified), Petronas Medical and Offshore Safety Passport (Petronas) Ready</p>
-            </div>
-    
-            <div class="job">
-                <h2>Technical Lead</h2>
-                <p>Self-employed</p>
-                <p>Jan 2016 - Jun 2017 (1 year 6 months)</p>
-            </div>
-    
-            <div class="job">
-                <h2>Electrical/Mechanical Tech III</h2>
-                <p>Halliburton</p>
-                <p>Sep 2009 - Jan 2016 (6 years 5 months)</p>
-                <ul>
-                    <li>Specialized in preventive maintenance, electrical, and mechanical training.</li>
-                    <li>Lithium battery safety officer with years of experience in handling lithium battery installation and waste management.</li>
-                    <li>KAIZEN and LEAN ready. Multiple maximum value performance (MVP) acquired through a challenging career.</li>
-                    <li>Relocation is never a problem.</li>
-                </ul>
-            </div>
-    
-            <div class="job">
-                <h2>Instrument Technician Trainee</h2>
-                <p>Sabah Forest Industries SDN. BHD</p>
-                <p>Jan 2008 - Jul 2008 (7 months)</p>
-                <ul>
-                    <li>Worked as a technician at the Instrument Maintenance Department.</li>
-                    <li>Prepared working reports and daily reports.</li>
-                    <li>Maintained basic instrument devices such as digital/analog transmitters, measuring devices, etc.</li>
-                    <li>Re-formatted computers.</li>
-                    <li>Assembled and disassembled basic instrument devices for maintenance.</li>
-                </ul>
-            </div>
-    
-        </div>
-    </section>
-    
-    <section id="projects" class="section">
-        <div class="container">
-            <h1>Projects</h1>
-    
-            <div class="project">
-                <h2>Kuwait NG Exit Checklist</h2>
-                <p>Jan 2024 - April 2024</p>
-                <p>Associated with Halliburton</p>
-                <p>Developed a comprehensive HR Offboarding application that significantly improves efficiency and accuracy in the offboarding process. Key features include:
-<ol>
-    <li>
-        <b>Automated Notifications:</b> Streamlines communication by sending timely alerts to relevant parties.
-    </li>
-    <li><b>Automated Approval:</b> Leverages Azure Directory for seamless approval workflows based on the employee’s direct manager.</li>
-    <li>
-        <b>Automated Documentation:</b>Utilizes JSON manipulation for generating and managing offboarding documents.
-    </li>
-    <li><b>Generative Document Control:</b>Ensures accurate and consistent document creation and management.
-        This app enhances operational efficiency and compliance, delivering a smooth offboarding experience.</li><br>
-        <img src="Asset/Image/ngExitChecklist.png" alt="Repair to function application Image">
-</ol>
-            
-            </div>
-    
-            <div class="project">
-                <h2>Global Repair To Function Apps</h2>
-                <p>Dec 2022 - Present</p>
-                <p>Associated with Halliburton</p>
-                <img src="Asset/Image/R2F.jpg" alt="Repair to function application Image">
-                <p>I have developed a user-friendly CRUD application that enables users to update their inventory for repaired to functional parts. The app provides valuable insights, displaying the cost savings achieved by utilizing repaired parts rather than new ones. Additionally, the app includes a reporting section that allows users to easily download reports for analysis purposes and automated notification for approval workflow.</p>
-            </div>
-    
-            <div class="project">
-                <h2>Continuous Improvement Observation App</h2>
-                <p>Nov 2022 - Present</p>
-                <p>Associated with Halliburton</p>
-                <img src="Asset/Image/iSolve.png" alt="CI Observation application Image">
-                <p>This application serves as a comprehensive platform that enhances communication between front-end workers and management, specifically focusing on real-time continuous improvement (CI) observations. It significantly reduces response times, fosters a culture of proactive improvement, and streamlines operations. Additionally, the app facilitates knowledge sharing and collaboration among users, creating a collaborative and effective environment for continuous improvement within the organization.</p>
-            </div>
-    
-            <div class="project">
-                <h2>Global Asset Redeployment</h2>
-                <p>Oct 2021 - Jan 2023</p>
-                <p>Associated with Halliburton</p>
-                <p>Top Redeployment Asset Management is an innovative application that allows users to submit their requests for asset redeployment. With this app, users can leave a comment on the specific asset that they want to be redeployed to their location, ensuring that their needs are met in a timely and efficient manner. The application is designed with an automated notification system that sends notifications to the region/country owner of the tool, ensuring that the redeployment process is swift and hassle-free. This feature helps streamline the redeployment process and ensures that everyone is kept up-to-date with the status of the assets. Additionally, the app is embedded in Power BI, allowing real-time data comparison and notifications, providing users with up-to-date information on the assets' status.</p>
-            </div>
-    
-            <div class="project">
-                <h2>Document Automation</h2>
-                <p>Sep 2020 - Aug 2021</p>
-                <p>Associated with Halliburton</p>
-                <p>I have developed a user-friendly application that simplifies the work order and dozuki paperwork process for technicians, improving efficiency and reducing potential errors in documentation. The application allows technicians to easily input their work order details and upload relevant dozuki documents, with the app automatically displaying the number of dozuki documents related to the tool selected. Additionally, the app streamlines the documentation process by automatically sorting the documents for final compilation with just a single click.</p>
-            </div>
-        </div>
-    </section>
+    <div class="row">
+      <div class="when"><b>Jan 2016</b>to Jun 2017</div>
+      <div>
+        <h3>Technical Lead</h3>
+        <p class="org">Self employed</p>
+        <ul><li>Led technical delivery on independent engagements over an eighteen month period.</li></ul>
+      </div>
+    </div>
 
-    <section id="education" class="section">
-        <div class="container">
-            <h1>Education</h1>
+    <div class="row">
+      <div class="when"><b>Sep 2009</b>to Jan 2016</div>
+      <div>
+        <h3>Electrical and Mechanical Technician III</h3>
+        <p class="org">Halliburton</p>
+        <ul>
+          <li>Specialised in preventive maintenance across electrical and mechanical systems.</li>
+          <li>Lithium battery safety officer covering installation and waste management.</li>
+          <li>KAIZEN and LEAN trained, with multiple Maximum Value Performance awards.</li>
+        </ul>
+      </div>
+    </div>
 
-            <div class="education">
-                <h2>BACHELOR OF INFORMATION TECHNOLOGY WITH HONOURS</h2>
-                <p><b>2021 - January 2025</b></p>
-                <p>Faculty of Technology and Applied Sciences</p>
-                <p>CGPA 3.79</p>
-                <p>Open University Malaysia</p>
-                <p>Dean List:</p>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMTAgMTEwMDExMDAg">September 2021</a><br>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAg">January 2022</a><br>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMDEg">May 2022</a><br>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMDAg">September 2022</a><br>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDAgMTEwMDExMDEg">May 2023</a><br>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDAgMTEwMDExMDAg">September 2023</a><br>
-                &emsp;<a href="https://alumni-portal.oum.edu.my/senarai_dekan/MTAwMDExMDAgMTAwMDEwMTEgMTAwMDEwMTAgMTAwMTEwMTEgMTAxMDAwMDAgMTAwMTAxMTAgMTAwMTEwMTEgMTEwMDAwMTAgMTEwMDAxMTEgMTEwMDAxMTEgMTEwMDExMTAgMTEwMDExMDEgMTEwMDExMDEgMTEwMDExMTAgMTEwMDEwMTEgMTEwMDAxMTAgMTEwMDEwMTAgMTEwMDExMTAgMTEwMDExMTAgMTEwMDAxMTAgMTEwMDExMTEgMTEwMDExMTEgMTEwMDExMTAgMTEwMTEwMDEgMTAwMDExMDAgMTAwMTEwMTAgMTAwMTAwMTAgMTAwMTEwMTAgMTAwMDExMDAgMTAwMDEwMTEgMTAwMTEwMTAgMTAwMDExMDEgMTEwMDAwMTAgMTEwMDExMTAgMTEwMDExMDEgMTEwMDEwMTEgMTEwMDExMTAg">January 2024</a><br>
-            </div>
-            <br>
-            <div class="education">
-                <h2>DIPLOMA OF ELECTRONIC ENGINEERING</h2>
-                <p><b>2007 - 2009</b></p>
-                <p>Electrical and Electronic Engineering</p>
-                <p>Polytechnic of Kota Kinabalu, Sabah</p>
-                <p>Malaysia</p>
-            </div>
-        </div>
-        
-    </section>
+    <div class="row">
+      <div class="when"><b>Jan 2008</b>to Jul 2008</div>
+      <div>
+        <h3>Instrument Technician Trainee</h3>
+        <p class="org">Sabah Forest Industries Sdn. Bhd., Malaysia</p>
+        <ul>
+          <li>Instrument Maintenance Department, maintaining digital and analog transmitters and measuring devices.</li>
+          <li>Assembled and disassembled instrument devices for maintenance, prepared daily and working reports.</li>
+        </ul>
+      </div>
+    </div>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h1>Contact</h1>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:Erwan.fadlys@gmail.com">Erwan.fadlys@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> Contact Number:</p>
-                <ul>
-                    <li>&emsp;<i class="fas fa-phone-square"></i> Kuwait: +965 9608 6853</li>
-                    <li>&emsp;<i class="fas fa-phone-square"></i> Malaysia: +60 10 8315 362</li>
-                </ul>
-                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/" target="_blank">https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/</a></p>
-                <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/erwanfadlys" target="_blank">facebook.com/erwanfadlys</a></p>
-            </div>
-        </div>
-    </section>
+  </section>
 
-    
+  <section id="work">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Selected work</h2></div>
 
-    <footer>
-        <p>&copy; 2024 Erwan Fadly Sudiman</p>
-    </footer>
+    <div class="row">
+      <div class="when"><b>SDS Tier 4</b>Halliburton</div>
+      <div>
+        <h3>Plant audit application, canvas to code</h3>
+        <p class="org">Power Apps Code App on Dataverse</p>
+        <ul>
+          <li>Enterprise plant audit application covering the full cycle: automated preparation ahead of the audit date, plant walkthrough, finding capture with photo evidence, repeat finding detection, tiered escalation, corrective action tracking and closure.</li>
+          <li>Delivered first as a Power Apps canvas application in Power Fx, then migrated to a React and TypeScript Code App on Dataverse. Fourteen screens, roughly 13,400 lines of application code, nine Dataverse tables.</li>
+          <li>Modelled a four level plant hierarchy, region to country to district to plant, with role based access separating auditors, coordinators and managers.</li>
+          <li>Consolidated audit scope rules into one shared module after duplicate implementations drifted and produced impossible completion figures.</li>
+          <li>Unit tested the pure business logic, scope rules, requirement numbering, role derivation and error translation, with a harness that cannot silently reach production data.</li>
+        </ul>
+        <p class="stack">React 19 · TypeScript · Power Apps Code App · Dataverse · Power Fx · Power Automate · Power BI · Vite · Vitest</p>
 
-</body>
-</html>
+        <figure style="margin-top:1.5rem">
+          <div class="fig-scroll">
+            <svg viewBox="0 0 880 300" role="img" aria-label="Architecture of the SDS Tier 4 audit application. An auditor works offline capable screens in a Power Apps Code App, which reads and writes nine Dataverse tables. Power Automate watches those tables and sends preparation reminders, tier escalations and overdue corrective action notices to stakeholders. Power BI reads the same tables for reporting. A dashed arrow shows the original Power Fx canvas app being migrated into the Code App.">
+              <defs>
+                <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" class="dg-head"/>
+                </marker>
+                <marker id="ar2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" class="dg-accent-fill"/>
+                </marker>
+              </defs>
+
+              <rect x="0" y="18" width="128" height="52" class="dg-fill"/>
+              <text x="64" y="40" text-anchor="middle" class="dg-t-lg">Auditor</text>
+              <text x="64" y="56" text-anchor="middle" class="dg-t-sm">on the plant floor</text>
+
+              <rect x="0" y="112" width="128" height="46" class="dg-dash"/>
+              <text x="64" y="132" text-anchor="middle" class="dg-t">Canvas app</text>
+              <text x="64" y="147" text-anchor="middle" class="dg-t-sm">Power Fx, shipped</text>
+
+              <rect x="222" y="18" width="168" height="140" class="dg-accent-soft"/>
+              <rect x="222" y="18" width="168" height="140" class="dg-accent"/>
+              <text x="306" y="42" text-anchor="middle" class="dg-t-acc">Code App</text>
+              <text x="306" y="60" text-anchor="middle" class="dg-t-sm">React 19, TypeScript</text>
+              <text x="306" y="76" text-anchor="middle" class="dg-t-sm">14 screens</text>
+              <line x1="246" y1="90" x2="366" y2="90" class="dg-rule"/>
+              <text x="306" y="108" text-anchor="middle" class="dg-t-sm">scope rules</text>
+              <text x="306" y="124" text-anchor="middle" class="dg-t-sm">role derivation</text>
+              <text x="306" y="140" text-anchor="middle" class="dg-t-sm">unit tested</text>
+
+              <rect x="488" y="18" width="150" height="86" class="dg-fill"/>
+              <text x="563" y="42" text-anchor="middle" class="dg-t-lg">Dataverse</text>
+              <text x="563" y="60" text-anchor="middle" class="dg-t-sm">9 tables</text>
+              <text x="563" y="76" text-anchor="middle" class="dg-t-sm">audits, findings,</text>
+              <text x="563" y="90" text-anchor="middle" class="dg-t-sm">evidence, roles</text>
+
+              <rect x="488" y="150" width="150" height="62" class="dg-fill"/>
+              <text x="563" y="172" text-anchor="middle" class="dg-t">Power Automate</text>
+              <text x="563" y="190" text-anchor="middle" class="dg-t-sm">reminders, escalation,</text>
+              <text x="563" y="204" text-anchor="middle" class="dg-t-sm">overdue actions</text>
+
+              <rect x="732" y="18" width="148" height="52" class="dg-fill"/>
+              <text x="806" y="40" text-anchor="middle" class="dg-t">Power BI</text>
+              <text x="806" y="56" text-anchor="middle" class="dg-t-sm">reporting</text>
+
+              <rect x="732" y="160" width="148" height="52" class="dg-fill"/>
+              <text x="806" y="182" text-anchor="middle" class="dg-t">Stakeholders</text>
+              <text x="806" y="198" text-anchor="middle" class="dg-t-sm">coordinators, managers</text>
+
+              <line x1="128" y1="44" x2="216" y2="44" class="dg-line" marker-end="url(#ar2)"/>
+              <text x="172" y="36" text-anchor="middle" class="dg-t-sm">captures</text>
+
+              <line x1="128" y1="135" x2="200" y2="135" class="dg-accent" stroke-dasharray="5 4" marker-end="url(#ar2a)"/>
+              <line x1="200" y1="135" x2="200" y2="100" class="dg-accent" stroke-dasharray="5 4"/>
+              <line x1="200" y1="100" x2="216" y2="100" class="dg-accent" stroke-dasharray="5 4" marker-end="url(#ar2a)"/>
+              <text x="150" y="160" class="dg-t-sm">migrating</text>
+
+              <line x1="390" y1="52" x2="482" y2="52" class="dg-line" marker-end="url(#ar2)"/>
+              <text x="436" y="44" text-anchor="middle" class="dg-t-sm">reads</text>
+              <line x1="482" y1="76" x2="390" y2="76" class="dg-line" marker-end="url(#ar2)"/>
+              <text x="436" y="94" text-anchor="middle" class="dg-t-sm">writes findings</text>
+
+              <line x1="563" y1="104" x2="563" y2="144" class="dg-line" marker-end="url(#ar2)"/>
+              <text x="570" y="128" class="dg-t-sm">watches</text>
+
+              <line x1="638" y1="44" x2="726" y2="44" class="dg-line" marker-end="url(#ar2)"/>
+              <text x="682" y="36" text-anchor="middle" class="dg-t-sm">reads</text>
+
+              <line x1="638" y1="186" x2="726" y2="186" class="dg-line" marker-end="url(#ar2)"/>
+              <text x="682" y="178" text-anchor="middle" class="dg-t-sm">notifies</text>
+            </svg>
+          </div>
+          <figcaption>Findings are written once, into Dataverse. Everything downstream, escalation, notification and reporting, reads from that single record rather than keeping its own copy. The dashed path is the canvas app the Code App is replacing.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>VerityQ</b>independent</div>
+      <div>
+        <h3>Verified AI analytics <span class="flag">Prototype</span></h3>
+        <p class="org">TypeScript, semantic layer, SQL</p>
+        <ul>
+          <li>An analytics architecture in which a language model cannot report an unverified number.</li>
+          <li>A plain language question compiles to a constrained semantic query that may only reference governed, pre defined metrics, which then compiles deterministically to parameterised SQL.</li>
+          <li>Every figure in the drafted answer is checked against the rows the query actually returned. Figures that cannot be verified are suppressed rather than shown.</li>
+          <li>Correctness is a property of the architecture, not an instruction in a system prompt. The design goal is auditability of AI output.</li>
+          <li>Current status: core query compilation and verification packages implemented and unit tested. Planner, connectors, UI, auth and persistence are not built.</li>
+        </ul>
+        <p class="stack">TypeScript · Node.js · SQL · semantic layer · LLM integration · Vitest</p>
+
+        <figure style="margin-top:1.5rem">
+          <div class="fig-scroll">
+            <svg viewBox="0 0 880 232" role="img" aria-label="The VerityQ pipeline. A natural language question is turned by a language model into a semantic query restricted to governed metric definitions, which compiles deterministically to parameterised SQL and returns result rows. A verifier checks every figure in the drafted answer against those same rows, publishing verified figures and suppressing the rest.">
+              <defs>
+                <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" class="dg-head"/>
+                </marker>
+                <marker id="ar3a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" class="dg-accent-fill"/>
+                </marker>
+              </defs>
+
+              <rect x="0" y="40" width="118" height="46" class="dg-fill"/>
+              <text x="59" y="60" text-anchor="middle" class="dg-t">Question</text>
+              <text x="59" y="76" text-anchor="middle" class="dg-t-sm">plain language</text>
+
+              <rect x="166" y="40" width="140" height="46" class="dg-fill"/>
+              <text x="236" y="60" text-anchor="middle" class="dg-t">Semantic query</text>
+              <text x="236" y="76" text-anchor="middle" class="dg-t-sm">governed metrics only</text>
+
+              <rect x="166" y="122" width="140" height="40" class="dg-dash"/>
+              <text x="236" y="140" text-anchor="middle" class="dg-t-sm">metric definitions</text>
+              <text x="236" y="154" text-anchor="middle" class="dg-t-sm">defined by humans</text>
+
+              <rect x="354" y="40" width="128" height="46" class="dg-fill"/>
+              <text x="418" y="60" text-anchor="middle" class="dg-t">Parameterised</text>
+              <text x="418" y="76" text-anchor="middle" class="dg-t-sm">SQL</text>
+
+              <rect x="530" y="40" width="118" height="46" class="dg-fill"/>
+              <text x="589" y="60" text-anchor="middle" class="dg-t">Result rows</text>
+              <text x="589" y="76" text-anchor="middle" class="dg-t-sm">the ground truth</text>
+
+              <rect x="530" y="150" width="118" height="44" class="dg-fill"/>
+              <text x="589" y="170" text-anchor="middle" class="dg-t">Draft answer</text>
+              <text x="589" y="185" text-anchor="middle" class="dg-t-sm">model prose</text>
+
+              <rect x="708" y="86" width="172" height="66" class="dg-accent-soft"/>
+              <rect x="708" y="86" width="172" height="66" class="dg-accent"/>
+              <text x="794" y="110" text-anchor="middle" class="dg-t-acc">Verifier</text>
+              <text x="794" y="127" text-anchor="middle" class="dg-t-sm">every figure checked</text>
+              <text x="794" y="142" text-anchor="middle" class="dg-t-sm">against the rows</text>
+
+              <line x1="118" y1="63" x2="160" y2="63" class="dg-line" marker-end="url(#ar3)"/>
+              <text x="139" y="34" text-anchor="middle" class="dg-t-sm">LLM</text>
+
+              <line x1="236" y1="122" x2="236" y2="92" class="dg-line" marker-end="url(#ar3)"/>
+              <text x="243" y="110" class="dg-t-sm">constrains</text>
+
+              <line x1="306" y1="63" x2="348" y2="63" class="dg-line" marker-end="url(#ar3)"/>
+              <text x="327" y="34" text-anchor="middle" class="dg-t-sm">compiles</text>
+
+              <line x1="482" y1="63" x2="524" y2="63" class="dg-line" marker-end="url(#ar3)"/>
+              <text x="503" y="34" text-anchor="middle" class="dg-t-sm">runs</text>
+
+              <line x1="589" y1="86" x2="589" y2="144" class="dg-line" marker-end="url(#ar3)"/>
+              <text x="596" y="118" class="dg-t-sm">summarised</text>
+
+              <line x1="648" y1="172" x2="700" y2="172" class="dg-line"/>
+              <line x1="700" y1="172" x2="700" y2="140" class="dg-line"/>
+              <line x1="700" y1="140" x2="702" y2="140" class="dg-line" marker-end="url(#ar3)"/>
+
+              <line x1="648" y1="63" x2="700" y2="63" class="dg-accent"/>
+              <line x1="700" y1="63" x2="700" y2="100" class="dg-accent"/>
+              <line x1="700" y1="100" x2="702" y2="100" class="dg-accent" marker-end="url(#ar3a)"/>
+              <text x="654" y="54" class="dg-t-sm">same rows</text>
+
+              <line x1="794" y1="152" x2="794" y2="196" class="dg-accent" marker-end="url(#ar3a)"/>
+              <text x="801" y="178" class="dg-t-sm">verified only</text>
+              <text x="794" y="222" text-anchor="middle" class="dg-t-acc">Published answer</text>
+            </svg>
+          </div>
+          <figcaption>The orange edge is the whole idea. The verifier reads the same result rows the SQL returned, not the model's recollection of them, so any figure the prose invents has nothing to match against and is suppressed before publication.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>Jan 2024</b>to Apr 2024</div>
+      <div>
+        <h3>Kuwait NG Exit Checklist</h3>
+        <p class="org">Halliburton</p>
+        <ul>
+          <li>HR offboarding application replacing a process that ran on manual coordination and paper trails.</li>
+          <li>Approval routing resolved automatically against the employee's direct manager through Azure Directory.</li>
+          <li>Automated document generation and control through JSON manipulation, producing consistent auditable offboarding records.</li>
+          <li>Three initiation routes, self service, on behalf of another employee, and manual entry, feeding one approval queue with a Power BI view for oversight.</li>
+        </ul>
+        <p class="stack">Power Apps · Power Automate · Entra ID · JSON</p>
+        <figure style="margin-top:1.25rem">
+          <img class="shot" src="Asset/Image/ngExitChecklist.png" width="1406" height="750" loading="lazy" alt="Northern Gulf Exit Checklist home screen, showing Create Checklist options for self initiate, on behalf and manual entry, a View Checklist section with pending, all, pending manager approval and Power BI views, and an Approver section.">
+          <figcaption>The role separates the work: anyone can raise a checklist, only an approver sees the approval queue. The Power BI entry point is the same data, read rather than written.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>Dec 2022</b>to present</div>
+      <div>
+        <h3>Global Repair To Function</h3>
+        <p class="org">Halliburton</p>
+        <ul>
+          <li>Inventory application tracking parts repaired back to functional condition, quantifying the cost saved against buying new.</li>
+          <li>Approval workflow with automated notification, plus downloadable reporting for analysis.</li>
+          <li>Scoped across the MENA region by country, district, quarter and month, with actual cost, repair cost, difference and total saved computed on submission.</li>
+        </ul>
+        <p class="stack">Power Apps · Power Automate · Power BI</p>
+        <figure style="margin-top:1.25rem">
+          <img class="shot" src="Asset/Image/R2F.jpg" width="639" height="339" loading="lazy" alt="Repair To Function submit screen. A region, district, quarter and month selector sits beside an equipment number entry field, with a running panel showing actual cost, repair cost, difference and total saved. The country dropdown lists Abu Dhabi, Saudi, Dubai, Oman, Kuwait, Egypt, Iraq and Algeria.">
+          <figcaption>Saving is calculated at the point of entry rather than reconciled later, so the number the technician sees is the number that reaches the report.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>Nov 2022</b>to present</div>
+      <div>
+        <h3>Continuous Improvement Observation, iSolve</h3>
+        <p class="org">Halliburton, Sperry Drilling</p>
+        <ul>
+          <li>Platform connecting front line workers and management for real time continuous improvement observations, cutting response time and supporting knowledge sharing across teams.</li>
+          <li>Observations classified against the eight LEAN waste categories, waiting, motion, cost avoidance, extra processing, non utilised talent, defects, inventory, transportation and over production.</li>
+          <li>Power BI reporting layer over the submissions, filterable by status, year, month, waste type, country and district.</li>
+          <li>175 observations captured across seven countries in the MENA region.</li>
+        </ul>
+        <p class="stack">Power Apps · Power Automate · Power BI</p>
+        <figure style="margin-top:1.25rem">
+          <img class="shot" src="Asset/Image/iSolve.png" width="1508" height="845" loading="lazy" alt="iSolve Power BI dashboard. Filters for status, year, month, waste, country and district sit above a bar chart of submissions by country, led by the United Arab Emirates at 82, Saudi Arabia at 36, Iraq at 21 and Kuwait at 14, a donut chart of waste type, a total submission count of 175, and a detail table with employee identifiers redacted.">
+          <figcaption>Classifying every observation against a fixed waste taxonomy is what makes the chart on the right possible. Free text would have produced a list nobody could aggregate.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>Oct 2021</b>to Jan 2023</div>
+      <div>
+        <h3>Global Asset Redeployment</h3>
+        <p class="org">Halliburton</p>
+        <ul>
+          <li>Request system letting users submit and comment on assets they need redeployed to their location.</li>
+          <li>Automated notification routed to the region or country owner of each tool, shortening the redeployment cycle.</li>
+          <li>Embedded in Power BI for real time comparison and asset status visibility.</li>
+        </ul>
+        <p class="stack">Power Apps · Power Automate · Power BI</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>Sep 2020</b>to Aug 2021</div>
+      <div>
+        <h3>Document Automation</h3>
+        <p class="org">Halliburton</p>
+        <ul>
+          <li>Simplified the work order and Dozuki documentation process for technicians, reducing documentation error.</li>
+          <li>Sorted and compiled documentation for final submission in a single action.</li>
+        </ul>
+        <p class="stack">Power Apps · Power Automate · SharePoint</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>2025</b>to 2026</div>
+      <div>
+        <h3>Independent software projects</h3>
+        <ul>
+          <li><strong>Resume Applier.</strong> Local first job search and resume tailoring tool with a deterministic, dependency free matching engine and no runtime API requirement.</li>
+          <li><strong>Tamu Pintar.</strong> Two sided marketplace web application for open air market sellers and visitors in Sabah, Malaysia.</li>
+        </ul>
+        <p class="stack">React · TypeScript · Vite · Node.js · Tailwind · Playwright</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Education</h2></div>
+
+    <div class="row">
+      <div class="when"><b>Expected</b>2027</div>
+      <div>
+        <h3>Master's Degree, Business Intelligence and Analytics (Artificial Intelligence) <span class="flag">In progress</span></h3>
+        <p class="org">Machine learning, data analytics, business intelligence, predictive modelling, statistical analysis</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>2021</b>to Jan 2025</div>
+      <div>
+        <h3>Bachelor of Information Technology with Honours</h3>
+        <p class="org">Open University Malaysia, Faculty of Technology and Applied Sciences</p>
+        <ul>
+          <li>CGPA 3.79, completed in full while working full time in Kuwait.</li>
+          <li>Dean's List in seven semesters: September 2021, January 2022, May 2022, September 2022, May 2023, September 2023 and January 2024.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>2007</b>to 2009</div>
+      <div>
+        <h3>Diploma of Electronic Engineering</h3>
+        <p class="org">Polytechnic of Kota Kinabalu, Sabah, Malaysia</p>
+        <ul><li>Electrical and electronic engineering.</li></ul>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="certification">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Certification</h2></div>
+
+    <div class="row">
+      <div class="when"><b>Technology</b></div>
+      <ul class="skill-list">
+        <li>Microsoft Power Platform</li><li>Python programming</li><li>Java programming</li>
+        <li>HTML and web technologies</li><li>Computational thinking</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="when"><b>Safety</b>and operations</div>
+      <ul class="skill-list">
+        <li>BOSIET, OPITO certified</li><li>Petronas Medical</li>
+        <li>Offshore Safety Passport, Petronas</li><li>Lithium battery safety officer</li>
+        <li>KAIZEN</li><li>LEAN</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section id="contact">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Contact</h2></div>
+    <div class="row">
+      <div class="when"><b>Reach me</b></div>
+      <ul class="skill-list">
+        <li><a href="mailto:erwan.fadlys@gmail.com">erwan.fadlys@gmail.com</a></li>
+        <li>Kuwait +965 9608 6853</li>
+        <li>Malaysia +60 10 8315 362</li>
+        <li><a href="https://www.linkedin.com/in/erwan-fadly-sudiman-5a4a4661/" target="_blank" rel="noopener">linkedin.com/in/erwan-fadly-sudiman</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap"><p>Erwan Fadly Sudiman, 2026. Press Ctrl or Cmd + P to save as PDF.</p></div>
+</footer>
